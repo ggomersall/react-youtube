@@ -33,7 +33,7 @@ class App extends Component {
     }
 
     render() {
-        const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300); // this adds a throttle on our search input sets to 300 milliseconds
+        const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300); // this adds a throttle on our search input sets to 300 milliseconds
 
         return (
             <div>
