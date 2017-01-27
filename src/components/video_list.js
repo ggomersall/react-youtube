@@ -5,7 +5,12 @@ const VideoList = (props) => {
 
     // use map to generate the lis of each video
     const videoItems = props.videos.map((video) => {
-        return <VideoListItem key={video.etag} video={video} />
+        return (
+            <VideoListItem
+                onVideoSelect={props.onVideoSelect}
+                key={video.etag}
+                video={video} />
+        )
     })
 
     return (
