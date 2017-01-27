@@ -6,14 +6,19 @@ import SearchBar from './components/search_bar';
 
 const API_KEY = 'AIzaSyDXP4oTTT1GCoDBHWSB-HDP_c-nUiMu0Fs';
 
-// downwards flow data
-// is the most parent component that fetches data
-
-YTSearch({key: API_KEY, term: 'surfboards'}, function(data) {
-    console.log(data);
-});
-
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = { videos: [] };
+
+        YTSearch({key: API_KEY, term: 'surfboards'}, (data) => {
+            this.setState({ videos: data });
+        });
+
+    }
+
     render() {
         return (
             <div>
