@@ -1,12 +1,16 @@
 //  This is a class based component
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
+const SearchBar = React.createClass({
+    getInitialState() {
+        return {
+            term: ''
+        }; // Sets our state to be blank text initially
+    }
 
-    constructor(props) {
-        super(props);
-
-        this.state = { term: '' }; // Sets our state to be blank text initially
+    onInputChange(term) {
+        this.setState({term});
+        this.props.onSearchTermChange(term);
     }
 
     render() {
@@ -17,13 +21,7 @@ class SearchBar extends Component {
                     onChange={ event => this.onInputChange(event.target.value)} />
             </div>
         );
-        
     }
-
-    onInputChange(term) {
-        this.setState({term});
-        this.props.onSearchTermChange(term);
-    }
-};
+});
 
 export default SearchBar;
