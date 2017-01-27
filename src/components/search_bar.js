@@ -6,7 +6,7 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { term: '' };
+        this.state = { term: '' }; // Sets our state to be blank text initially
     }
 
     render() {
