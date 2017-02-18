@@ -6,12 +6,12 @@ const SearchBar = React.createClass({
         return {
             term: ''
         }; // Sets our state to be blank text initially
-    }
+    },
 
     onInputChange(term) {
         this.setState({term});
         this.props.onSearchTermChange(term);
-    }
+    },
 
     render() {
         return(
